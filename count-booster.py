@@ -18,3 +18,4 @@ for i in range(1, num):
     # print(response.status_code)
 
 print('Success!')
+print('The whole process took: ' + str(round(time.time() - start, 3)) + " sec")
