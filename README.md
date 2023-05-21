@@ -8,6 +8,8 @@ Specifically for popular github profile visit counter:
 - [***hit-counter***](https://github.com/gjbae1212/hit-counter)   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fexample%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 - Almost anything that integrated with [camo](https://github.com/atmos/camo) that look similar as above
 
+**Notes:** the code can take a while to finish if the number of increments of views is very large (above 1000)
+
 # How this works 🤓
 There are different types of page visits:
 - Unique visitors
