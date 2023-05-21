@@ -1,35 +1,66 @@
-import requests
+# copied from https://github.com/greyhatguy007/increase-visitor-counter
+
 import time
-from threading import Thread
-
-THREAD_COUNT = 4
-
-def boost(url, num):
-    for i in range(1, num):
-        response = requests.get(url, headers=header)
-        # print(response.status_code)
-
-
-# example user agent as proxy to send request to web page
-header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'}
-
-print('Welcome! Enter the camo url for your visitor count picture: ')
-url = input()
-
-print('Number of boost on visitor counts: ')
-num = int(input())
-
-print('Working on it...')
 start = time.time()
+from math import ceil, floor
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import os
+from selenium.webdriver.chrome.options import Options
 
-threads = []
-for i in range(THREAD_COUNT):
-    t = Thread(target=boost, args=(url, int(num/THREAD_COUNT),))
-    threads.append(t)
-    t.start()
+options = Options()
+options.headless = True
 
-for t in threads:
-    t.join()
+print()
+print()
+print("Made with \u2764\uFE0F From Ritvik")
+print()
 
-print('Success!')
-print('Time Taken: ' + str(round(time.time() - start, 3)) + " sec")
+user = input("ENTER YOUR GITHUB USERNAME :")
+count = int(input("ENTER NUMBER OF VISITOR COUNTS TO INCREASE : "))
+url = "https://github.com/"+user+"/"+user+"/"
+
+opt = input("DO YOU WISH TO ENABLE THREADING ? (Y/N) : ")
+opt = opt.strip().upper()
+
+if opt=="Y":
+    print()
+    print("NOTE : DON'T GIVE HIGH THREADS, POTATO PC'S WILL FRY")
+    threads = int(input("ENTER NUMBER OF THREADS ( 2-5 RECOMMENDED): "))
+    count = int(count/threads)
+    browsers = []
+
+    print("HANG ON, THIS MIGHT TAKE A BIT...")
+    print("GO GRAB A COFFEE !")
+
+    for _i in range(1,threads+1):
+        temp = "browser"+str(_i)
+        temp = webdriver.Chrome(options=options)
+        #temp = webdriver.Chrome()
+        browsers.append(temp)
+
+    for _i in range(0,count):
+        for browser in browsers:
+            browser.get(url)
+        print(round((_i+1)*100/(count),2), " PERCENT DONE")
+
+    for browser in browsers:
+        browser.close()
+
+elif opt=='N':
+    print("HANG ON, THIS MIGHT TAKE A BIT...")
+    print("GO GRAB A COFFEE !")
+
+    browser = webdriver.Chrome(options=options)
+
+
+    for _i in range(0,count):
+        browser.get(url)
+        print(round((_i+1)*100/(count),2), " PERCENT DONE")
+    browser.close()
+else:
+    print("INVALID CHOICE")
+end = time.time()
+
+print("PROCESS FINISHED, TIME TAKEN :", end-start)
+print()
