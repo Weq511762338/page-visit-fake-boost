@@ -1,14 +1,14 @@
 # page-visit-fake-boost
 Fake boost your github profile page visit counts
 
-# About
+# About 👍
 Run this code to fake boost the visitor counter numbers displaying on github profile pages
 Specifically for popular github profile visit counter:
 - [***github-profile-views-counter***](https://github.com/antonkomarev/github-profile-views-counter)    ![Views](https://komarev.com/ghpvc/?username=example)
 - [***hit-counter***](https://github.com/gjbae1212/hit-counter)   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fexample%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 - Almost anything that integrated with [camo](https://github.com/atmos/camo) that look similar as above
 
-# How this works
+# How this works 🤓
 There are different types of page visits:
 - Unique visitors
 - Repeat visitors 
@@ -27,7 +27,7 @@ The logic of the code is very simple: since for _**Page visitors**_, the counter
 So to "visit" this counter, we can fake a HTTP request and use python's `requests` package to send requests with corresponding url.
 
 
-# Ethics & Purpose
+# Ethics & Purpose 🤞
 Join this [*discussion*](https://github.com/Weq511762338/page-visit-fake-boost/discussions/1) on this repo if you are interested to share thoughts with others!
 
 ***Should we use this?***
@@ -39,8 +39,10 @@ This is meant to be a learning opportunity/little trick.
 
 *Plus, this doesn't work for most other authoritative website. Learn how this actually works in [**How this works**](#how-this-works) section below
 
-# Usage
+# Usage 💻
 1. Clone this repository
-2. Copy the link to the visit counter by clicking on the displaying counter
+2. Copy the link of the page after clicking on the displaying counter
 3. Run the python script `count-booster.py`
-5. Follow the instruction once the code is executed
+4. Follow the instruction once the code is executed
+
+![img](instruction.png)
